@@ -44,6 +44,10 @@
     color: #6a0dad;
 }
 
+a{
+    margin-right: 10px;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     .about-page {
@@ -68,6 +72,10 @@
     .about-card {
         margin-bottom: 15px; 
     }
+
+    a{
+        margin-bottom: 10px;
+    }
 }
 
 /* Further Adjustments for Mobile Screens */
@@ -91,5 +99,9 @@
     .resume-btn {
         font-size: 0.85rem;
         padding: 6px 12px;
+    }
+
+    a{
+        margin-bottom: 10px;
     }
 }
