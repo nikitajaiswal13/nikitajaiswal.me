@@ -11,6 +11,10 @@ html{
     scroll-behavior: smooth;
 }
 
+body {
+    background: #f8f9fa;
+}
+
 .roboto-condensed {
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;

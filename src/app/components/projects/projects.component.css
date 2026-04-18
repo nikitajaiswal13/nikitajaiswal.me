@@ -1,33 +1,47 @@
 .projects-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url('/assets/BG/project.jpg') no-repeat center center/cover;
-    padding: 50px 20px;
+    background: #f8f9fa;
+    padding: 60px 0; 
+}
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: 0.3s ease;
+    height: 100%;
 }
 
-.about-card {
-    background: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
-    max-width: 350px;
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-.about-card:hover {
-    transform: scale(1.05);
+.project-card h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-.about-card h5 {
-    font-size: 1.2rem;
-    color: #6a0dad;
-    font-weight: bold;
+.project-card p {
+    color: #555;
+    font-size: 0.95rem;
 }
 
-.about-card p {
+.tech span {
+    display: inline-block;
+    background: #f1f1f1;
     color: #333;
-    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 4px 6px 0 0;
+    transition: 0.2s ease;
+}
+
+.tech span:hover {
+    background: #6a0dad;
+    color: white;
+}
+
+.project-links a {
+    margin-right: 10px;
 }
