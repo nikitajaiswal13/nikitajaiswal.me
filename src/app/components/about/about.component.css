@@ -1,42 +1,37 @@
+/* ================= ABOUT PAGE ================= */
 .about-page {
-    /* background: url('/assets/BG/about_bg.avif') no-repeat center center ; */
-    /* background-size: cover; */
     width: 100%;
-    min-height: 100vh;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 60px 20px; /* better spacing */
 }
 
-.profile-img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
+/* ================= TEXT ================= */
 .about-text {
     font-size: 1rem;
     color: #444;
     text-align: justify;
+    max-width: 600px;
 }
 
+/* ================= BUTTON ================= */
 .resume-btn {
     margin-top: 20px;
     font-size: 1rem;
     padding: 10px 20px;
 }
 
+/* ================= CARDS ================= */
 .about-card {
     background: white;
     text-align: center;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
 .about-card i {
@@ -44,24 +39,75 @@
     color: #6a0dad;
 }
 
-a{
+/* ================= LINKS ================= */
+a {
     margin-right: 10px;
 }
 
-/* Responsiveness */
+/* ================= TECH ICONS ================= */
+.tech-icons-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: auto; /* center block */
+}
+
+/* icons */
+.icon {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    animation: floatY 4s ease-in-out infinite;
+}
+
+/* PERFECT DIAMOND LAYOUT */
+.angular { 
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.node { 
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mongo { 
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.js { 
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* FLOATING (safe) */
+@keyframes floatY {
+    0%   { translate: 0 0; }
+    50%  { translate: 0 -10px; }
+    100% { translate: 0 0; }
+}
+
+/* delay */
+.angular { animation-delay: 0s; }
+.mongo   { animation-delay: 0.5s; }
+.js      { animation-delay: 1s; }
+.node    { animation-delay: 1.5s; }
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .about-page {
-        padding: 30px 15px;
+        padding: 40px 15px;
         text-align: center;
     }
 
-    .profile-img {
-        max-width: 200px; 
-        margin-bottom: 20px;
-    }
-
     .about-text {
-        font-size: 0.95rem; 
+        font-size: 0.95rem;
     }
 
     .resume-btn {
@@ -70,30 +116,33 @@ a{
     }
 
     .about-card {
-        margin-bottom: 15px; 
+        margin-bottom: 15px;
     }
 
-    a{
+    .tech-icons-container {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+
+    .icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    a {
         margin-bottom: 10px;
+        display: inline-block;
     }
 }
 
-/* Further Adjustments for Mobile Screens */
 @media (max-width: 576px) {
     .about-page {
-        padding: 20px 10px;
-    }
-
-    .profile-img {
-        max-width: 180px;
+        padding: 30px 10px;
     }
 
     .about-text {
         font-size: 0.9rem;
-    }
-
-    .about-card {
-        padding: 12px;
     }
 
     .resume-btn {
@@ -101,7 +150,7 @@ a{
         padding: 6px 12px;
     }
 
-    a{
-        margin-bottom: 10px;
+    .about-card {
+        padding: 12px;
     }
 }
