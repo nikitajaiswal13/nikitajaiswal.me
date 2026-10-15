@@ -1,6 +1,35 @@
-.footer {
-    background: linear-gradient(to right, #1a004e, #7643df);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+.site-footer {
+  padding: 40px 0 60px 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 600px) {
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-primary);
 }

@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './skills.component.css'
 })
 export class SkillsComponent {
+  activeSkillDomain: 'all' | 'languages' | 'frontend' | 'backend' | 'ml' | 'database' = 'all';
 
+  setSkillDomain(domain: 'all' | 'languages' | 'frontend' | 'backend' | 'ml' | 'database') {
+    this.activeSkillDomain = domain;
+  }
 }

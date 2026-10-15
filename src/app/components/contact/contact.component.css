@@ -1,108 +1,30 @@
-.contact-container {
-    padding: 70px;
+/* Contact Component Styles */
+.eng-input {
+  background: #080c14 !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 0.875rem !important;
+  padding: 10px 14px !important;
 }
 
-.contact-box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px 10px rgba(0, 0, 0, 0.1);
+.eng-input:focus {
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2) !important;
 }
 
-.contact-container p {
-    margin-top: 0;
-    margin-bottom: 2rem;
+.eng-input::placeholder {
+  color: var(--text-dim) !important;
 }
 
-.contact-box h3 {
-    font-weight: bold;
-}
-
-.contact-box p {
-    margin: 5px 0;
-}
-
-.form-control {
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-.send-btn {
-    background: #6a0dad;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: none;
-    transition: 0.3s;
-}
-
-.send-btn:hover {
-    background: #540a92;
-}
-
-
-
-@media (max-width: 768px) {
-    .contact-container {
-        padding: 50px;
-    }
-
-    .contact-box {
-        text-align: center;
-    }
-
-    .contact-box p {
-        font-size: 14px;
-    }
-
-    .send-btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    .contact-container {
-        padding: 30px;
-    }
-
-    .row {
-        flex-direction: column;
-    }
-
-    .col-md-5,
-    .col-md-7 {
-        width: 100%;
-        text-align: center;
-    }
-
-    .contact-box {
-        margin-bottom: 20px;
-    }
-
-    .form-control {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    .send-btn {
-        width: 100%;
-        font-size: 16px;
-    }
-}
-
-.form-control {
-    margin-bottom: 10px;
-}
-
-.error {
-    color: red;
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.send-btn:disabled {
-    background-color: gray;
-    cursor: not-allowed;
+.contact-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
 }

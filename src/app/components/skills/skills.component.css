@@ -1,78 +1,62 @@
-#skills {
-  padding: 60px 0;
-  background-color: #f8f9fa;
+.btn-filter {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.775rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-#skills h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.btn-filter:hover {
+  color: var(--text-primary);
+  border-color: var(--border-medium);
 }
 
-#skills p {
-  font-size: 1rem;
-  color: #6c757d;
+.btn-filter.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #fff;
 }
 
-#skills .row {
+.skill-category-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-category-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+}
+
+.skill-item-list {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* Skills Column Styling */
-#skills .col-md-3 {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  font-size: 0.8rem;
 }
 
-#skills .col-md-3:hover {
-  transform: translateY(-5px);
+.skill-item:last-child {
+  border-bottom: none;
 }
 
-#skills h4 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #343a40;
+.skill-name {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
-#skills ul {
-  padding: 0;
-}
-
-#skills ul li {
-  list-style: none;
-  font-size: 1rem;
-  padding: 5px 0;
-  color: #495057;
-}
-
-/* Responsiveness */
-@media (max-width: 991px) {
-  #skills .col-md-3 {
-    width: 48%;
-  }
-}
-
-@media (max-width: 768px) {
-  #skills .col-md-3 {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  #skills h2 {
-    font-size: 1.8rem;
-  }
-
-  #skills h4 {
-    font-size: 1.3rem;
-  }
-
-  #skills ul li {
-    font-size: 0.9rem;
-  }
+.skill-mapped-project {
+  color: var(--accent-cyan);
+  font-size: 0.725rem;
+  background: rgba(56, 189, 248, 0.08);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
 }

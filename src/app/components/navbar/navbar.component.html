@@ -1,58 +1,22 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container">
-      <a class="navbar-brand" routerLink="/">Nikita Jaiswal</a>
+<header class="editorial-header">
+  <div class="site-container header-inner">
+    <a routerLink="/home" class="brand-name">
+      Nikita Jaiswal
+    </a>
 
-      <button class="navbar-toggler custom-toggler ml-auto"
-       type="button" 
-       data-bs-toggle="collapse" 
-       data-bs-target="#navbarnav" 
-       aria-controls="navbarnav" 
-       aria-expanded="false" 
-       aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav class="nav-cluster">
+      <a routerLink="/projects" class="nav-link-item">Work</a>
+      <a routerLink="/about" class="nav-link-item">About</a>
+      <a routerLink="/contact" class="nav-link-item">Contact</a>
+
+      <button 
+        type="button" 
+        class="theme-toggle" 
+        (click)="toggleTheme()" 
+        [attr.aria-label]="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+        [title]="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+        <i class="fas" [ngClass]="isDark ? 'fa-sun' : 'fa-moon'"></i>
       </button>
-
-      <div class="collapse navbar-collapse" id="navbarnav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link " routerLink="/home" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                <i class="fa-solid fa-home"></i>
-                Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " routerLink="about" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                <i class="fa-solid fa-user"></i>
-                About
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " routerLink="skills" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                <i class="fa-solid fa-lightbulb"></i>
-                Skills
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " routerLink="projects" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" disabled>
-                <i class="fa-solid fa-diagram-project"></i> 
-                Projects
-            </a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled-link" routerLink="projects" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                <i class="fa-solid fa-diagram-project"></i>
-                Projects
-            </a>
-        </li> -->
-
-        
-          <li class="nav-item">
-            <a class="nav-link " routerLink="contact" routerLinkActive="active" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">
-                <i class="fa-solid fa-phone"></i>
-                Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</nav>
+    </nav>
+  </div>
+</header>

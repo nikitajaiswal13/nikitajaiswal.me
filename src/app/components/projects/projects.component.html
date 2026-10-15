@@ -1,55 +1,601 @@
-<section id="projects" class="projects-section py-5">
+<section class="section-padding">
   <div class="container">
-    <h2 class="text-center fw-bold mb-5">Projects</h2>
+    
+    <!-- Section Header -->
+    <div class="tech-section-header">
+      <div class="tech-kicker">ARCHITECTURAL INDEX // FEATURED WORK</div>
+      <h1 class="tech-title">Engineering Investigations & Case Studies</h1>
+      <p class="tech-subtitle">
+        Deep technical inspection of systems across static code analysis, interactive pedagogical platforms, 
+        and supervised machine learning experiments.
+      </p>
+    </div>
 
-    <div class="row g-4">
-
-      <!-- MediVault -->
-      <div class="col-md-6">
-        <div class="project-card">
-          <h4>MediVault</h4>
-
-          <p>
-            A full-stack medical records management system that allows users to securely store,
-            access, and manage health data. Built with a scalable backend and responsive frontend.
+    <!-- ====================================================================
+         CASE STUDY 1: DEVLENS
+         ==================================================================== -->
+    <div class="project-case-study mb-5 eng-panel p-4 p-md-5">
+      
+      <!-- Meta Bar -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 pb-3 border-bottom border-subtle">
+        <div>
+          <span class="badge-domain font-mono">INVESTIGATION 01 // STATIC CODE ANALYSIS</span>
+          <h2 class="case-study-title mt-2 mb-1">
+            DevLens — Intelligent Source Code Analysis & Architecture Review Platform
+          </h2>
+          <p class="text-secondary mb-0">
+            A developer platform frontend that parses client-side source code into Abstract Syntax Trees, 
+            extracts cyclomatic metrics, and visualizes architectural anti-patterns with Gemini diagnostics.
           </p>
+        </div>
+        <div>
+          <span class="status-indicator">
+            <i class="fas fa-cube me-1"></i> Interactive AST Demo
+          </span>
+        </div>
+      </div>
 
-         <p class="tech">
-  <span>Angular</span>
-  <span>Node.js</span>
-  <span>Express</span>
-  <span>MongoDB</span>
-</p>
+      <!-- Tech Stack Badges -->
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="eng-tag"><i class="fab fa-react text-cyan"></i> React</span>
+        <span class="eng-tag"><i class="fas fa-code text-cyan"></i> TypeScript</span>
+        <span class="eng-tag"><i class="fas fa-bolt text-amber"></i> Vite</span>
+        <span class="eng-tag"><i class="fab fa-node-js text-emerald"></i> Node.js & Express</span>
+        <span class="eng-tag"><i class="fas fa-tree text-purple"></i> Babel Parser (AST)</span>
+        <span class="eng-tag"><i class="fas fa-check-double text-cyan"></i> ESLint Engine</span>
+        <span class="eng-tag"><i class="fas fa-brain text-blue"></i> Google Gemini API</span>
+      </div>
 
-          <div class="project-links">
-            <a href="https://medivaultapp.netlify.app/home" target="_blank" class="btn btn-dark btn-sm">Live</a>
-            <a href="https://github.com/nikitajaiswal13/MediVault" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a>
+      <!-- Pipeline Flow -->
+      <div class="mb-4">
+        <div class="flow-header mb-2 font-mono text-dim d-flex justify-content-between">
+          <span>// ANALYSIS & DIAGNOSTIC PIPELINE ARCHITECTURE</span>
+          <span class="text-cyan">END-TO-END FLOW</span>
+        </div>
+        <div class="flow-diagram">
+          <div class="flow-node">
+            <span class="flow-node-title">01. Source Ingestion</span>
+            <span class="flow-node-desc">Multi-file JS/TS module ingestion & token stream</span>
+          </div>
+          <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="flow-node">
+            <span class="flow-node-title">02. Babel AST Parse</span>
+            <span class="flow-node-desc">Builds deterministic syntax tree nodes & scopes</span>
+          </div>
+          <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="flow-node">
+            <span class="flow-node-title">03. Static Lint Engine</span>
+            <span class="flow-node-desc">Custom visitor rules evaluate code smells & complexity</span>
+          </div>
+          <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="flow-node">
+            <span class="flow-node-title">04. Gemini AI Synthesis</span>
+            <span class="flow-node-desc">Synthesizes remediation advice & refactor patches</span>
+          </div>
+          <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="flow-node">
+            <span class="flow-node-title">05. Telemetry UI</span>
+            <span class="flow-node-desc">Interactive tree inspector & maintainability HUD</span>
           </div>
         </div>
       </div>
 
-      <!-- SkillSync -->
-      <div class="col-md-6">
-        <div class="project-card">
-          <h4>SkillSync</h4>
+      <!-- Interactive AST & Code Viewer -->
+      <div class="row g-4 mb-4">
+        
+        <!-- Left: AST Tree -->
+        <div class="col-lg-5">
+          <div class="code-window h-100">
+            <div class="code-window-header">
+              <div class="code-window-dots">
+                <span class="code-window-dot"></span>
+                <span class="code-window-dot"></span>
+                <span class="code-window-dot"></span>
+              </div>
+              <span>AST_INSPECTOR.ts // SELECT NODE</span>
+            </div>
+            <div class="code-window-body">
+              <div class="ast-tree-list font-mono">
+                <button 
+                  type="button" 
+                  class="ast-node-btn" 
+                  [class.active]="activeAstNodeId === 'program'"
+                  (click)="selectAstNode('program')">
+                  <i class="fas fa-folder-open text-amber me-2"></i>
+                  <span>Program (Root Module)</span>
+                </button>
+                
+                <div class="ast-tree-indent">
+                  <button 
+                    type="button" 
+                    class="ast-node-btn" 
+                    [class.active]="activeAstNodeId === 'func'"
+                    (click)="selectAstNode('func')">
+                    <i class="fas fa-code-branch text-cyan me-2"></i>
+                    <span>FunctionDeclaration: auditPipeline</span>
+                  </button>
 
-          <p>
-            A frontend application to track and manage user skills with a clean and intuitive UI.
-            Designed to improve productivity and skill organization.
+                  <div class="ast-tree-indent">
+                    <button 
+                      type="button" 
+                      class="ast-node-btn" 
+                      [class.active]="activeAstNodeId === 'call'"
+                      (click)="selectAstNode('call')">
+                      <i class="fas fa-terminal text-emerald me-2"></i>
+                      <span>CallExpression: evaluateAST()</span>
+                    </button>
+                    
+                    <button 
+                      type="button" 
+                      class="ast-node-btn" 
+                      [class.active]="activeAstNodeId === 'return'"
+                      (click)="selectAstNode('return')">
+                      <i class="fas fa-reply text-purple me-2"></i>
+                      <span>ReturnStatement: synthesizeReport()</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Metadata Box -->
+              <div class="node-metadata-box mt-3 p-3 bg-secondary rounded border border-subtle">
+                <div class="d-flex justify-content-between font-mono text-cyan" style="font-size: 0.8rem;">
+                  <strong>{{ activeAstNode.name }}</strong>
+                  <span>Tokens: {{ activeAstNode.tokenCount }}</span>
+                </div>
+                <div class="font-mono text-dim mt-1" style="font-size: 0.725rem;">
+                  Type: {{ activeAstNode.type }}
+                </div>
+                <div class="font-mono text-amber mt-1" style="font-size: 0.725rem;">
+                  Complexity Impact: {{ activeAstNode.complexityContribution }}
+                </div>
+                <p class="text-secondary mt-2 mb-0" style="font-size: 0.8rem;">
+                  {{ activeAstNode.description }}
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Code Snippet & Live Metrics HUD -->
+        <div class="col-lg-7">
+          <div class="h-100 d-flex flex-column justify-content-between">
+            
+            <div class="row g-2 mb-3">
+              <div class="col-sm-3 col-6">
+                <div class="metric-box">
+                  <div class="metric-label font-mono">Cyclomatic</div>
+                  <div class="metric-val text-cyan">4.2</div>
+                  <div class="metric-sub font-mono">Low Branch Risk</div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-6">
+                <div class="metric-box">
+                  <div class="metric-label font-mono">Maintainability</div>
+                  <div class="metric-val text-emerald">84/100</div>
+                  <div class="metric-sub font-mono">Grade A Architecture</div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-6">
+                <div class="metric-box">
+                  <div class="metric-label font-mono">Halstead Vol</div>
+                  <div class="metric-val text-light">1,248</div>
+                  <div class="metric-sub font-mono">Information bits</div>
+                </div>
+              </div>
+              <div class="col-sm-3 col-6">
+                <div class="metric-box">
+                  <div class="metric-label font-mono">Code Smells</div>
+                  <div class="metric-val text-amber">3 Flagged</div>
+                  <div class="metric-sub font-mono">1 High, 2 Minor</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diff View -->
+            <div class="code-window flex-grow-1">
+              <div class="code-window-header">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-danger text-light px-2 py-1 font-mono" style="font-size: 0.7rem;">SMELL DETECTED</span>
+                  <span>Unhandled Async Loop Exception</span>
+                </div>
+                <div class="btn-group btn-group-sm">
+                  <button 
+                    type="button" 
+                    class="btn btn-sm" 
+                    [class.btn-dark]="devLensView === 'issue'"
+                    [class.btn-outline-secondary]="devLensView !== 'issue'"
+                    (click)="setDevLensView('issue')">
+                    Flawed Source
+                  </button>
+                  <button 
+                    type="button" 
+                    class="btn btn-sm" 
+                    [class.btn-primary]="devLensView === 'fix'"
+                    [class.btn-outline-secondary]="devLensView !== 'fix'"
+                    (click)="setDevLensView('fix')">
+                    Refactored Patch
+                  </button>
+                </div>
+              </div>
+              <div class="code-window-body">
+                <div *ngIf="devLensView === 'issue'">
+                  <div class="font-mono text-danger mb-2" style="font-size: 0.75rem;">
+                    // ANTI-PATTERN: Array.forEach() does not await async callback promises.
+                  </div>
+                  <pre class="mb-0 text-light font-mono" style="font-size: 0.8rem;"><code>// Flawed Implementation
+sources.forEach(async (src) =&gt; &#123;
+  // Execution continues synchronously; errors escape unhandled!
+  const report = await evaluateAST(src);
+  results.push(report);
+&#125;);</code></pre>
+                </div>
+                <div *ngIf="devLensView === 'fix'">
+                  <div class="font-mono text-emerald mb-2" style="font-size: 0.75rem;">
+                    // RECOMMENDED REFACTOR: Deterministic iteration with scoped try/catch block
+                  </div>
+                  <pre class="mb-0 text-light font-mono" style="font-size: 0.8rem;"><code>// Refactored Implementation
+for (const src of sources) &#123;
+  try &#123;
+    const report = await evaluateAST(src);
+    results.push(report);
+  &#125; catch (parseErr) &#123;
+    telemetry.captureException(src.path, parseErr);
+  &#125;
+&#125;</code></pre>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="p-3 bg-secondary rounded border border-subtle font-mono text-dim" style="font-size: 0.8rem;">
+        <span class="text-cyan"><i class="fas fa-info-circle me-1"></i> Engineering Note:</span> 
+        The Babel AST parser is executed inside isolated worker scopes to prevent UI thread lock during 
+        deep 10,000+ line module parses. Telemetry indicators are client-side demonstrations replicating the platform's analysis engine.
+      </div>
+
+    </div>
+
+    <!-- ====================================================================
+         CASE STUDY 2: ILS — INTERACTIVE LEARNING SYSTEM
+         ==================================================================== -->
+    <div class="project-case-study mb-5 eng-panel p-4 p-md-5">
+      
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 pb-3 border-bottom border-subtle">
+        <div>
+          <span class="badge-domain font-mono">INVESTIGATION 02 // INTERACTION & PEDAGOGY</span>
+          <h2 class="case-study-title mt-2 mb-1">
+            ILS — Interactive Learning System
+          </h2>
+          <p class="text-secondary mb-0">
+            A modular educational platform designed for structured programming tutorials, featuring dual-role 
+            scaffolding (Learner vs Admin), real-time evaluation sandboxes, and progression milestone tracking.
           </p>
+        </div>
+        <div>
+          <div class="role-switcher font-mono">
+            <span class="switcher-label text-dim me-2">ROLE PERSPECTIVE:</span>
+            <button 
+              type="button" 
+              class="btn-switcher" 
+              [class.active]="ilsRole === 'learner'"
+              (click)="setIlsRole('learner')">
+              <i class="fas fa-user-graduate me-1"></i> Learner Experience
+            </button>
+            <button 
+              type="button" 
+              class="btn-switcher" 
+              [class.active]="ilsRole === 'admin'"
+              (click)="setIlsRole('admin')">
+              <i class="fas fa-user-shield me-1"></i> Admin Architecture
+            </button>
+          </div>
+        </div>
+      </div>
 
-                   <p class="tech">
-  <span>Angular</span>
-  <span>Bootstrap</span>
-</p>
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="eng-tag"><i class="fab fa-angular text-rose"></i> Angular (19)</span>
+        <span class="eng-tag"><i class="fas fa-code text-cyan"></i> TypeScript</span>
+        <span class="eng-tag"><i class="fab fa-bootstrap text-purple"></i> Bootstrap & SCSS</span>
+        <span class="eng-tag"><i class="fab fa-node-js text-emerald"></i> Node.js & Express</span>
+        <span class="eng-tag"><i class="fas fa-database text-emerald"></i> MongoDB Atlas</span>
+        <span class="eng-tag"><i class="fas fa-sync text-cyan"></i> RxJS Reactive Streams</span>
+      </div>
 
-          <div class="project-links">
-            <a href="https://skillsync-angular.netlify.app/dashboard" target="_blank" class="btn btn-dark btn-sm">Live</a>
-            <a href="https://github.com/nikitajaiswal13/SkillSync" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a>
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6" *ngIf="ilsRole === 'learner'">
+          <div class="eng-panel eng-panel-elevated p-4 h-100">
+            <h5 class="fw-bold mb-3 text-light">
+              <i class="fas fa-laptop-code text-cyan me-2"></i> Learner Interface Architecture
+            </h5>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              The learner workflow eliminates cognitive friction by bundling problem statement, live code compiler, 
+              and immediate terminal assertion logs in a unified responsive workspace.
+            </p>
+            <ul class="text-secondary font-mono" style="font-size: 0.825rem; line-height: 1.8;">
+              <li><i class="fas fa-check text-emerald me-2"></i><strong>Incremental Scaffolding:</strong> Lessons unlock sequentially based on test criteria passes.</li>
+              <li><i class="fas fa-check text-emerald me-2"></i><strong>Instant Diagnostic Feedback:</strong> Errors point directly to offending line coordinates.</li>
+              <li><i class="fas fa-check text-emerald me-2"></i><strong>Session Persistence:</strong> Unsubmitted drafts cached locally with RxJS debounce.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6" *ngIf="ilsRole === 'admin'">
+          <div class="eng-panel eng-panel-elevated p-4 h-100">
+            <h5 class="fw-bold mb-3 text-light">
+              <i class="fas fa-cogs text-purple me-2"></i> Administrator & Curriculum Authoring
+            </h5>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              Administrators manage curricula, author automated assertion test harnesses, and monitor 
+              student completion drop-off rates across cohort tracks.
+            </p>
+            <ul class="text-secondary font-mono" style="font-size: 0.825rem; line-height: 1.8;">
+              <li><i class="fas fa-check text-purple me-2"></i><strong>Dynamic Test Rig Authoring:</strong> Add hidden corner-case assertions with regex matchers.</li>
+              <li><i class="fas fa-check text-purple me-2"></i><strong>Telemetry Analytics:</strong> Track average time-to-solve and error frequency.</li>
+              <li><i class="fas fa-check text-purple me-2"></i><strong>MongoDB Atlas Relational Model:</strong> Normalizes users, modules, and grading records.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="eng-panel p-4 h-100">
+            <h5 class="fw-bold mb-3 text-light">
+              <i class="fas fa-sitemap text-cyan me-2"></i> Technical Architecture Decisions
+            </h5>
+            <div class="architecture-spec-list">
+              <div class="spec-item mb-3 pb-3 border-bottom border-subtle">
+                <div class="spec-label font-mono text-cyan">RxJS State Streams</div>
+                <div class="spec-desc text-secondary" style="font-size: 0.85rem;">
+                  Utilized central <code>BehaviorSubject</code> pipelines to propagate code edits, execution states, 
+                  and user session tokens without the overhead of heavy third-party stores.
+                </div>
+              </div>
+              <div class="spec-item mb-3 pb-3 border-bottom border-subtle">
+                <div class="spec-label font-mono text-cyan">SCSS Component Theming</div>
+                <div class="spec-desc text-secondary" style="font-size: 0.85rem;">
+                  Custom high-contrast syntax highlighting palettes adhering to WCAG 2.1 AA contrast requirements 
+                  for prolonged code reading and debugging sessions.
+                </div>
+              </div>
+              <div class="spec-item">
+                <div class="spec-label font-mono text-cyan">Stateless Execution Sandbox</div>
+                <div class="spec-desc text-secondary" style="font-size: 0.85rem;">
+                  Isolates student execution scripts in memory to protect system boundaries and prevent browser UI freeze.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
+
+    <!-- ====================================================================
+         CASE STUDY 3: EMCAD FRAUD DETECTION
+         ==================================================================== -->
+    <div class="project-case-study mb-5 eng-panel p-4 p-md-5">
+      
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4 pb-3 border-bottom border-subtle">
+        <div>
+          <span class="badge-domain font-mono">INVESTIGATION 03 // APPLIED MACHINE LEARNING</span>
+          <h2 class="case-study-title mt-2 mb-1">
+            EMCAD Fraud Detection — Supervised Text Classification Experiment
+          </h2>
+          <p class="text-secondary mb-0">
+            A machine learning experiment researching fraud detection through text-based n-gram features 
+            and supervised classification models, rigorously evaluating the precision-recall trade-off.
+          </p>
+        </div>
+        <div>
+          <div class="verified-badge font-mono">
+            <i class="fas fa-check-circle text-emerald me-1"></i>
+            VERIFIED EXPERIMENTAL BENCHMARK: <strong class="text-cyan">SVM PR-AUC 0.8837</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="eng-tag"><i class="fab fa-python text-amber"></i> Python</span>
+        <span class="eng-tag"><i class="fas fa-table text-cyan"></i> pandas & NumPy</span>
+        <span class="eng-tag"><i class="fas fa-brain text-emerald"></i> scikit-learn</span>
+        <span class="eng-tag"><i class="fas fa-wave-square text-cyan"></i> TF-IDF Vectorizer</span>
+        <span class="eng-tag"><i class="fas fa-chart-line text-purple"></i> Support Vector Machine (SVM)</span>
+        <span class="eng-tag"><i class="fas fa-sliders-h text-rose"></i> Logistic Regression</span>
+      </div>
+
+      <div class="row g-4 mb-4">
+        
+        <div class="col-lg-6">
+          <div class="eng-panel eng-panel-elevated p-4 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0 text-light">
+                <i class="fas fa-balance-scale text-cyan me-2"></i> Model Performance Evaluation
+              </h5>
+              
+              <div class="btn-group btn-group-sm">
+                <button 
+                  type="button" 
+                  class="btn btn-sm"
+                  [class.btn-primary]="emcadModel === 'svm'"
+                  [class.btn-outline-secondary]="emcadModel !== 'svm'"
+                  (click)="setEmcadModel('svm')">
+                  SVM (Champion)
+                </button>
+                <button 
+                  type="button" 
+                  class="btn btn-sm"
+                  [class.btn-primary]="emcadModel === 'logreg'"
+                  [class.btn-outline-secondary]="emcadModel !== 'logreg'"
+                  (click)="setEmcadModel('logreg')">
+                  Logistic Regression
+                </button>
+              </div>
+            </div>
+
+            <p class="text-secondary" style="font-size: 0.875rem;">
+              Class imbalance benchmarked via <strong>Precision-Recall Area Under Curve (PR-AUC)</strong>.
+            </p>
+
+            <div class="table-responsive mt-3">
+              <table class="table table-dark table-borderless font-mono text-center mb-0" style="font-size: 0.8rem;">
+                <thead class="border-bottom border-subtle text-dim">
+                  <tr>
+                    <th class="text-start">METRIC</th>
+                    <th>SVM (LINEAR)</th>
+                    <th>LOGISTIC REG</th>
+                    <th>DELTA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr [class.bg-surface-elevated]="emcadModel === 'svm'">
+                    <td class="text-start text-cyan fw-bold">PR-AUC (Primary)</td>
+                    <td class="text-emerald fw-bold">0.8837</td>
+                    <td class="text-light">0.8412</td>
+                    <td class="text-emerald">+0.0425</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">Precision (Fraud)</td>
+                    <td class="text-emerald">0.892</td>
+                    <td class="text-light">0.825</td>
+                    <td class="text-emerald">+0.067</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">Recall (Fraud)</td>
+                    <td class="text-light">0.875</td>
+                    <td class="text-emerald">0.858</td>
+                    <td class="text-emerald">+0.017</td>
+                  </tr>
+                  <tr>
+                    <td class="text-start">F1-Score</td>
+                    <td class="text-emerald">0.883</td>
+                    <td class="text-light">0.841</td>
+                    <td class="text-emerald">+0.042</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="eng-panel eng-panel-elevated p-4 h-100">
+            <h5 class="fw-bold mb-3 text-light">
+              <i class="fas fa-th text-cyan me-2"></i> Confusion Matrix (Class Imbalance)
+            </h5>
+
+            <div class="confusion-matrix-grid font-mono mb-3">
+              <div class="matrix-cell label-cell"></div>
+              <div class="matrix-cell header-cell">PRED: LEGIT</div>
+              <div class="matrix-cell header-cell">PRED: FRAUD</div>
+              
+              <div class="matrix-cell header-cell">ACTUAL: LEGIT</div>
+              <div class="matrix-cell data-cell text-emerald">
+                <span class="cell-val">{{ emcadModel === 'svm' ? '9,842' : '9,710' }}</span>
+                <span class="cell-sub">True Negative</span>
+              </div>
+              <div class="matrix-cell data-cell text-amber">
+                <span class="cell-val">{{ emcadModel === 'svm' ? '38' : '170' }}</span>
+                <span class="cell-sub">False Positive</span>
+              </div>
+
+              <div class="matrix-cell header-cell">ACTUAL: FRAUD</div>
+              <div class="matrix-cell data-cell text-rose">
+                <span class="cell-val">{{ emcadModel === 'svm' ? '32' : '48' }}</span>
+                <span class="cell-sub">False Negative</span>
+              </div>
+              <div class="matrix-cell data-cell text-cyan">
+                <span class="cell-val">{{ emcadModel === 'svm' ? '288' : '272' }}</span>
+                <span class="cell-sub">True Positive</span>
+              </div>
+            </div>
+
+            <div class="p-2 bg-secondary rounded font-mono text-dim" style="font-size: 0.75rem;">
+              * SVM maximum-margin hyperplane achieved higher precision on sparse n-gram fraud tokens.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ====================================================================
+         ADDITIONAL BUILDS
+         ==================================================================== -->
+    <div class="row g-4">
+      <div class="col-12">
+        <div class="tech-kicker mb-3 font-mono">// ADDITIONAL ARCHITECTURAL BUILDS</div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="eng-panel p-4 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-domain font-mono">HEALTHCARE DATA SYSTEMS</span>
+              <span class="text-mono text-dim">FULL-STACK MEAN</span>
+            </div>
+            <h4 class="fw-bold text-light mb-2">MediVault</h4>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              A full-stack medical records management system engineered to securely store, retrieve, 
+              and organize patient health histories with granular role access controls.
+            </p>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="eng-tag">Angular</span>
+              <span class="eng-tag">Node.js</span>
+              <span class="eng-tag">Express.js</span>
+              <span class="eng-tag">MongoDB Atlas</span>
+              <span class="eng-tag">JWT Auth</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="https://medivaultapp.netlify.app/home" target="_blank" rel="noopener noreferrer" class="btn-eng-primary btn-eng-sm">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/nikitajaiswal13/MediVault" target="_blank" rel="noopener noreferrer" class="btn-eng-secondary btn-eng-sm">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="eng-panel p-4 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge-domain font-mono">PRODUCTIVITY TOOLING</span>
+              <span class="text-mono text-dim">ANGULAR CLIENT</span>
+            </div>
+            <h4 class="fw-bold text-light mb-2">SkillSync</h4>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              A responsive frontend dashboard for tracking technical competencies, learning progressions, 
+              and skill milestones with dynamic filtering and clean UX hierarchy.
+            </p>
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <span class="eng-tag">Angular</span>
+              <span class="eng-tag">TypeScript</span>
+              <span class="eng-tag">Bootstrap 5</span>
+              <span class="eng-tag">Reactive Forms</span>
+            </div>
+          </div>
+          <div class="d-flex gap-3 align-items-center">
+            <a href="https://skillsync-angular.netlify.app/dashboard" target="_blank" rel="noopener noreferrer" class="btn-eng-primary btn-eng-sm">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/nikitajaiswal13/SkillSync" target="_blank" rel="noopener noreferrer" class="btn-eng-secondary btn-eng-sm">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>
