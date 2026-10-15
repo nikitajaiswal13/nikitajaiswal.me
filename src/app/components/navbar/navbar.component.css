@@ -36,8 +36,13 @@
   transition: color 0.15s ease;
 }
 
-.nav-link-item:hover {
+.nav-link-item:hover,
+.nav-link-item.active {
   color: var(--text-heading);
+}
+
+.nav-link-item.active {
+  font-weight: 500;
 }
 
 .theme-toggle {

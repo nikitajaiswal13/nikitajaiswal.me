@@ -1,258 +1,41 @@
-<section class="section-padding">
-  <div class="container">
-    
-    <!-- Section Header -->
-    <div class="tech-section-header">
-      <div class="tech-kicker">TECHNICAL INVENTORY // STACK MATRIX</div>
-      <h1 class="tech-title">Engineering Stack & Domain Breakdown</h1>
-      <p class="tech-subtitle">
-        Concrete technologies and engineering domains tied directly to production systems, academic coursework, 
-        and machine learning experiments.
-      </p>
-    </div>
+<main class="site-container editorial-page">
 
-    <!-- Domain Filters -->
-    <div class="d-flex flex-wrap gap-2 mb-4 font-mono">
-      <button 
-        type="button" 
-        class="btn-filter" 
-        [class.active]="activeSkillDomain === 'all'"
-        (click)="setSkillDomain('all')">
-        All Domains
-      </button>
-      <button 
-        type="button" 
-        class="btn-filter" 
-        [class.active]="activeSkillDomain === 'languages'"
-        (click)="setSkillDomain('languages')">
-        Languages
-      </button>
-      <button 
-        type="button" 
-        class="btn-filter" 
-        [class.active]="activeSkillDomain === 'frontend'"
-        (click)="setSkillDomain('frontend')">
-        Frontend Architecture
-      </button>
-      <button 
-        type="button" 
-        class="btn-filter" 
-        [class.active]="activeSkillDomain === 'backend'"
-        (click)="setSkillDomain('backend')">
-        Backend & Systems
-      </button>
-      <button 
-        type="button" 
-        class="btn-filter" 
-        [class.active]="activeSkillDomain === 'ml'"
-        (click)="setSkillDomain('ml')">
-        Machine Learning
-      </button>
-      <button 
-        type="button" 
-        class="btn-filter" 
-        [class.active]="activeSkillDomain === 'database'"
-        (click)="setSkillDomain('database')">
-        Data & DevOps
-      </button>
-    </div>
+  <!-- Skills Hero / Header -->
+  <header class="skills-hero">
+    <h1 class="skills-page-title">Skills</h1>
+    <p class="skills-page-intro">
+      Technologies, frameworks, and tools I use to build software, web applications, and data-driven projects.
+    </p>
+  </header>
 
-    <!-- Skills Grid -->
-    <div class="row g-4">
-      
-      <!-- Languages Domain -->
-      <div class="col-lg-4 col-md-6" *ngIf="activeSkillDomain === 'all' || activeSkillDomain === 'languages'">
-        <div class="skill-category-card eng-panel p-4 h-100">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fas fa-code text-cyan"></i>
-            <h5 class="fw-bold mb-0 text-light">Programming Languages</h5>
+  <hr class="divider" />
+
+  <!-- Categories Section -->
+  <div class="skills-container">
+    <section class="skill-category-block" *ngFor="let group of skillCategories; let last = last">
+      <div class="category-header">
+        <h2 class="category-title">{{ group.category }}</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of group.skills">
+          <div class="skill-icon-wrap" aria-hidden="true">
+            <img 
+              [src]="skill.icon" 
+              [alt]="skill.name + ' logo'" 
+              class="skill-logo" 
+              [class.skill-logo-adaptive]="skill.adaptive"
+              [class.skill-logo-pandas]="skill.isPandas"
+              width="20" 
+              height="20" 
+              loading="lazy" />
           </div>
-          <div class="skill-item-list font-mono">
-            <div class="skill-item">
-              <span class="skill-name">TypeScript</span>
-              <span class="skill-mapped-project">DevLens, ILS</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JavaScript (ES6+)</span>
-              <span class="skill-mapped-project">MediVault, DevLens</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Python (3.x)</span>
-              <span class="skill-mapped-project">EMCAD ML Pipeline</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">C++</span>
-              <span class="skill-mapped-project">131+ LeetCode DSA</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">HTML5 & CSS3 / SCSS</span>
-              <span class="skill-mapped-project">ILS, Portfolio, SkillSync</span>
-            </div>
-          </div>
+          <span class="skill-name">{{ skill.name }}</span>
         </div>
       </div>
 
-      <!-- Frontend Domain -->
-      <div class="col-lg-4 col-md-6" *ngIf="activeSkillDomain === 'all' || activeSkillDomain === 'frontend'">
-        <div class="skill-category-card eng-panel p-4 h-100">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fab fa-angular text-rose"></i>
-            <h5 class="fw-bold mb-0 text-light">Frontend Architecture</h5>
-          </div>
-          <div class="skill-item-list font-mono">
-            <div class="skill-item">
-              <span class="skill-name">Angular (19)</span>
-              <span class="skill-mapped-project">ILS, MediVault, SkillSync</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">RxJS Reactive Streams</span>
-              <span class="skill-mapped-project">ILS State Services</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Reactive Forms & Validation</span>
-              <span class="skill-mapped-project">Contact, MediVault</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">React & Vite</span>
-              <span class="skill-mapped-project">DevLens Interface</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Bootstrap 5</span>
-              <span class="skill-mapped-project">ILS, Portfolio UI</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Backend & Systems Domain -->
-      <div class="col-lg-4 col-md-6" *ngIf="activeSkillDomain === 'all' || activeSkillDomain === 'backend'">
-        <div class="skill-category-card eng-panel p-4 h-100">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fab fa-node-js text-emerald"></i>
-            <h5 class="fw-bold mb-0 text-light">Backend & API Systems</h5>
-          </div>
-          <div class="skill-item-list font-mono">
-            <div class="skill-item">
-              <span class="skill-name">Node.js</span>
-              <span class="skill-mapped-project">MediVault, DevLens API</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Express.js Middleware</span>
-              <span class="skill-mapped-project">REST Endpoints, Auth</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">RESTful API Design</span>
-              <span class="skill-mapped-project">CRUD & Resource Contracts</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JWT Authentication</span>
-              <span class="skill-mapped-project">MediVault User Scopes</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Asynchronous Event Loop</span>
-              <span class="skill-mapped-project">AST Worker Orchestration</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Data & Machine Learning Domain -->
-      <div class="col-lg-4 col-md-6" *ngIf="activeSkillDomain === 'all' || activeSkillDomain === 'ml'">
-        <div class="skill-category-card eng-panel p-4 h-100">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fas fa-brain text-purple"></i>
-            <h5 class="fw-bold mb-0 text-light">Machine Learning & Data</h5>
-          </div>
-          <div class="skill-item-list font-mono">
-            <div class="skill-item">
-              <span class="skill-name">scikit-learn</span>
-              <span class="skill-mapped-project">EMCAD Experiment</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">pandas & NumPy</span>
-              <span class="skill-mapped-project">Data Ingestion & Cleaning</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">TF-IDF Vectorization</span>
-              <span class="skill-mapped-project">Text Feature Matrices</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Support Vector Machines</span>
-              <span class="skill-mapped-project">Linear Kernel Classification</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Model Evaluation (PR-AUC)</span>
-              <span class="skill-mapped-project">Imbalanced Class Metrics</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Databases & Infrastructure Domain -->
-      <div class="col-lg-4 col-md-6" *ngIf="activeSkillDomain === 'all' || activeSkillDomain === 'database'">
-        <div class="skill-category-card eng-panel p-4 h-100">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fas fa-database text-amber"></i>
-            <h5 class="fw-bold mb-0 text-light">Databases & DevOps</h5>
-          </div>
-          <div class="skill-item-list font-mono">
-            <div class="skill-item">
-              <span class="skill-name">MongoDB Atlas</span>
-              <span class="skill-mapped-project">MediVault, ILS Relational</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Mongoose ODM</span>
-              <span class="skill-mapped-project">Schema Validation</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">MySQL</span>
-              <span class="skill-mapped-project">Relational DB Lab Work</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Git & GitHub</span>
-              <span class="skill-mapped-project">Version Control, CI/CD</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Netlify Cloud Deployment</span>
-              <span class="skill-mapped-project">SPA Hosting & Redirects</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Analysis & Tooling -->
-      <div class="col-lg-4 col-md-6" *ngIf="activeSkillDomain === 'all' || activeSkillDomain === 'frontend'">
-        <div class="skill-category-card eng-panel p-4 h-100">
-          <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fas fa-tools text-light"></i>
-            <h5 class="fw-bold mb-0 text-light">Analysis Tooling & APIs</h5>
-          </div>
-          <div class="skill-item-list font-mono">
-            <div class="skill-item">
-              <span class="skill-name">Babel Parser</span>
-              <span class="skill-mapped-project">DevLens AST Generation</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">ESLint Rule Engine</span>
-              <span class="skill-mapped-project">Static Code Linting</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Google Gemini API</span>
-              <span class="skill-mapped-project">Diagnostic Summaries</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">EmailJS</span>
-              <span class="skill-mapped-project">Client-Side Messaging</span>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">VS Code & Debuggers</span>
-              <span class="skill-mapped-project">Primary IDE</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
+      <hr class="category-divider" *ngIf="!last" />
+    </section>
   </div>
-</section>
+
+</main>

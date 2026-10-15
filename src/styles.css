@@ -78,6 +78,18 @@ body {
   padding: 0 28px;
 }
 
+.editorial-page {
+  padding-top: 52px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 576px) {
+  .editorial-page {
+    padding-top: 36px;
+    padding-bottom: 60px;
+  }
+}
+
 /* Typography Hierarchy */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-heading);
@@ -218,3 +230,13 @@ a:hover {
   padding: 5px 12px;
   font-size: 0.8rem;
 }
+
+/* Adaptive skill logos in dark mode */
+html.dark .skill-logo-adaptive {
+  filter: invert(1);
+}
+
+html.dark .skill-logo-pandas {
+  filter: brightness(2.2);
+}
+
