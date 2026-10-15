@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .editorial-page {
-  padding-top: 56px;
+  padding-top: 52px;
   padding-bottom: 80px;
 }
 
@@ -17,34 +17,34 @@
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 36px;
+  gap: 32px;
 }
 
 @media (min-width: 768px) {
   .hero-grid {
-    grid-template-columns: 1.15fr 1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: 48px;
     align-items: start;
   }
 }
 
-.hero-headline {
+.hero-name {
   font-size: 2.25rem;
-  font-weight: 700;
-  line-height: 1.18;
+  font-weight: 600;
+  line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--text-heading);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 576px) {
-  .hero-headline {
+  .hero-name {
     font-size: 1.85rem;
   }
 }
 
 .hero-identity {
-  font-size: 0.9rem;
+  font-size: 0.925rem;
   color: var(--text-muted);
   line-height: 1.5;
   margin: 0;
@@ -54,7 +54,7 @@
   font-size: 0.975rem;
   line-height: 1.65;
   color: var(--text-body);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 /* Currently Exploring Block */
@@ -97,14 +97,43 @@
   font-size: 0.8rem;
 }
 
-/* Hero Inline Links */
-.hero-links {
+/* Hero Social Icons & Resume */
+.hero-actions {
   display: flex;
+  align-items: center;
+  gap: 16px;
   flex-wrap: wrap;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
 
-.quiet-link {
+.social-icon-link {
+  color: var(--text-heading);
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, transform 0.15s ease;
+  line-height: 1;
+}
+
+.social-icon-link:hover {
+  color: var(--text-muted);
+  transform: translateY(-1px);
+}
+
+.social-separator {
+  width: 1px;
+  height: 16px;
+  background-color: var(--border-subtle);
+  display: inline-block;
+}
+
+.resume-link {
   font-size: 0.875rem;
   color: var(--text-heading);
   text-decoration: underline;
@@ -113,7 +142,7 @@
   transition: text-decoration-color 0.15s ease, color 0.15s ease;
 }
 
-.quiet-link:hover {
+.resume-link:hover {
   text-decoration-color: var(--text-heading);
 }
 
@@ -123,22 +152,22 @@
   transition: transform 0.15s ease;
 }
 
-.quiet-link:hover .arrow {
+.resume-link:hover .arrow {
   transform: translate(2px, -2px);
 }
 
 /* ==========================================================================
    SELECTED WORK: NUMBERED INDEX
-   ========================================================================== */
+   ========================================================================= */
 .work-section {
-  padding: 8px 0;
+  padding: 4px 0;
 }
 
 .section-title-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .section-heading {
@@ -186,7 +215,7 @@
   }
   .index-action {
     grid-column: 2 / -1;
-    margin-top: -6px;
+    margin-top: -4px;
   }
 }
 
@@ -261,63 +290,93 @@
 }
 
 /* ==========================================================================
-   META SECTION: EDUCATION & CONTACT
+   EDUCATION SECTION
    ========================================================================== */
-.meta-section {
-  padding: 8px 0;
+.education-section {
+  padding: 4px 0;
 }
 
-.meta-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
+.education-entry {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 6px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
 }
 
-@media (min-width: 680px) {
-  .meta-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-  }
-}
-
-.meta-heading {
-  font-size: 1rem;
+.education-degree {
+  font-size: 1.025rem;
   font-weight: 600;
   color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.education-college {
+  font-size: 0.925rem;
+  color: var(--text-body);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.education-university {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 2px 0 8px 0;
+}
+
+.education-graduation {
+  font-size: 0.825rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.leetcode-entry {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  padding: 6px 2px;
+}
+
+.leetcode-label {
+  color: var(--text-muted);
+  font-size: 0.825rem;
+}
+
+.leetcode-text {
+  color: var(--text-body);
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+.contact-section {
+  padding: 4px 0;
+}
+
+.contact-note {
+  font-size: 0.925rem;
+  color: var(--text-body);
+  line-height: 1.6;
   margin-bottom: 16px;
 }
 
-.meta-item-title {
-  font-size: 0.925rem;
-  font-weight: 600;
-  color: var(--text-heading);
-}
-
-.meta-item-desc {
-  font-size: 0.875rem;
-  color: var(--text-body);
-  line-height: 1.5;
-  margin-top: 2px;
-}
-
-.meta-text {
-  font-size: 0.9rem;
-  color: var(--text-body);
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-
-.contact-details {
-  font-size: 0.875rem;
-  color: var(--text-body);
+.contact-grid {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
+  font-size: 0.9rem;
 }
 
-.contact-key {
+.contact-detail {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.contact-label {
+  width: 72px;
   color: var(--text-muted);
-  font-family: var(--font-mono);
   font-size: 0.8rem;
-  margin-right: 8px;
 }

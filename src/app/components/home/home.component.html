@@ -6,21 +6,18 @@
   <section class="editorial-hero">
     <div class="hero-grid">
       
-      <!-- Left Column: Headline & Identity -->
+      <!-- Left Column: Name & Identity -->
       <div class="hero-left">
-        <h1 class="hero-headline">
-          Curious by nature.<br />
-          Building by practice.
-        </h1>
+        <h1 class="hero-name">Nikita Jaiswal</h1>
         <p class="hero-identity">
-          Nikita Jaiswal &bull; Information Technology Engineering Student
+          Information Technology Engineering Student
         </p>
       </div>
 
-      <!-- Right Column: Brief Intro, Currently Exploring & Links -->
+      <!-- Right Column: Introduction, Exploring Block & Social Icons -->
       <div class="hero-right">
         <p class="hero-intro-text">
-          I'm an Information Technology engineering student at BVCOEW, Pune. I am interested in web development, software engineering, and learning by building focused, practical projects.
+          I'm an Information Technology engineering student at Bharati Vidyapeeth's College of Engineering for Women, Pune. I enjoy building web applications and learning through practical projects.
         </p>
 
         <!-- Currently Exploring Block -->
@@ -42,18 +39,43 @@
           </ul>
         </div>
 
-        <!-- Direct Social / Contact Links -->
-        <div class="hero-links">
-          <a href="https://github.com/NikitaJaiswal13" target="_blank" rel="noopener noreferrer" class="quiet-link">
-            GitHub <span class="arrow">&nearr;</span>
-          </a>
-          <a href="https://www.linkedin.com/in/nikita-jaiswal-56b10728b/" target="_blank" rel="noopener noreferrer" class="quiet-link">
-            LinkedIn <span class="arrow">&nearr;</span>
-          </a>
-          <a href="mailto:nikkijaiswal535@gmail.com" class="quiet-link">
-            Email <span class="arrow">&nearr;</span>
-          </a>
-          <a href="assets/Nikita_Jaiswal_Resume.pdf" target="_blank" rel="noopener noreferrer" class="quiet-link">
+        <!-- Social Icons & Resume Link -->
+        <div class="hero-actions">
+          <div class="social-icons">
+            <a 
+              href="https://github.com/NikitaJaiswal13" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="social-icon-link" 
+              aria-label="GitHub Profile" 
+              title="GitHub Profile">
+              <i class="fab fa-github"></i>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/nikita-jaiswal-56b10728b/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="social-icon-link" 
+              aria-label="LinkedIn Profile" 
+              title="LinkedIn Profile">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a 
+              href="mailto:nikkijaiswal535@gmail.com" 
+              class="social-icon-link" 
+              aria-label="Email Nikita Jaiswal" 
+              title="Send an Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+
+          <span class="social-separator"></span>
+
+          <a 
+            href="assets/Nikita_Jaiswal_Resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="resume-link">
             Resume <span class="arrow">&nearr;</span>
           </a>
         </div>
@@ -72,36 +94,15 @@
     <div class="section-title-row">
       <h2 class="section-heading">Selected work</h2>
       <a routerLink="/projects" class="section-side-link">
-        Detailed case studies <span class="arrow">&rarr;</span>
+        All projects <span class="arrow">&rarr;</span>
       </a>
     </div>
 
     <div class="numbered-index">
       
-      <!-- Project 01: DevLens -->
+      <!-- Project 01: Interactive Learning System -->
       <article class="index-entry">
         <div class="index-num font-mono">01</div>
-        <div class="index-content">
-          <div class="index-header">
-            <h3 class="index-title">
-              <a routerLink="/projects">DevLens</a>
-            </h3>
-            <span class="index-subtle-tag">React &bull; TypeScript &bull; AST</span>
-          </div>
-          <p class="index-summary">
-            Source code analysis and architecture review platform that parses JavaScript and TypeScript into syntax trees to evaluate code-quality metrics.
-          </p>
-        </div>
-        <div class="index-action">
-          <a routerLink="/projects" class="index-link" aria-label="View DevLens details">
-            <span>Explore</span> <span class="arrow">&rarr;</span>
-          </a>
-        </div>
-      </article>
-
-      <!-- Project 02: Interactive Learning System -->
-      <article class="index-entry">
-        <div class="index-num font-mono">02</div>
         <div class="index-content">
           <div class="index-header">
             <h3 class="index-title">
@@ -120,9 +121,9 @@
         </div>
       </article>
 
-      <!-- Project 03: EMCAD Fraud Detection -->
+      <!-- Project 02: EMCAD Fraud Detection -->
       <article class="index-entry">
-        <div class="index-num font-mono">03</div>
+        <div class="index-num font-mono">02</div>
         <div class="index-content">
           <div class="index-header">
             <h3 class="index-title">
@@ -141,9 +142,9 @@
         </div>
       </article>
 
-      <!-- Project 04: MediVault -->
+      <!-- Project 03: MediVault -->
       <article class="index-entry">
-        <div class="index-num font-mono">04</div>
+        <div class="index-num font-mono">03</div>
         <div class="index-content">
           <div class="index-header">
             <h3 class="index-title">
@@ -162,75 +163,65 @@
         </div>
       </article>
 
-      <!-- Project 05: SkillSync -->
-      <article class="index-entry">
-        <div class="index-num font-mono">05</div>
-        <div class="index-content">
-          <div class="index-header">
-            <h3 class="index-title">
-              <a href="https://skillsync-angular.netlify.app/dashboard" target="_blank" rel="noopener noreferrer">SkillSync</a>
-            </h3>
-            <span class="index-subtle-tag">Angular &bull; Bootstrap</span>
-          </div>
-          <p class="index-summary">
-            Frontend application to track and organize technical competencies, progress milestones, and learning pathways.
-          </p>
-        </div>
-        <div class="index-action">
-          <a href="https://skillsync-angular.netlify.app/dashboard" target="_blank" rel="noopener noreferrer" class="index-link" aria-label="Open SkillSync live application">
-            <span>Live demo</span> <span class="arrow">&nearr;</span>
-          </a>
-        </div>
-      </article>
-
     </div>
   </section>
 
   <hr class="divider" />
 
   <!-- ========================================================================
-       BACKGROUND & CONTACT
+       EDUCATION SECTION
        ======================================================================== -->
-  <section class="meta-section">
-    <div class="meta-grid">
-      
-      <!-- Education & DSA -->
-      <div class="meta-col">
-        <h2 class="meta-heading">Education & Practice</h2>
-        <div class="meta-item">
-          <div class="meta-item-title">BVCOEW, Pune</div>
-          <div class="meta-item-desc">Bachelor of Engineering, Information Technology (2022 &mdash; 2026)</div>
-        </div>
-        <div class="meta-item mt-3">
-          <div class="meta-item-title">Problem Solving</div>
-          <div class="meta-item-desc">
-            131+ DSA problems solved on 
-            <a href="https://leetcode.com/u/nikitajaiswal13/" target="_blank" rel="noopener noreferrer" class="text-link">LeetCode &nearr;</a>
-          </div>
-        </div>
-      </div>
+  <section class="education-section">
+    <div class="section-title-row">
+      <h2 class="section-heading">Education</h2>
+    </div>
 
-      <!-- Contact -->
-      <div class="meta-col">
-        <h2 class="meta-heading">Contact</h2>
-        <p class="meta-text">
-          Open for software engineering opportunities, internships, and project discussions.
-        </p>
-        <div class="contact-details">
-          <div>
-            <span class="contact-key">Email:</span>
-            <a href="mailto:nikkijaiswal535@gmail.com" class="text-link">nikkijaiswal535&#64;gmail.com</a>
-          </div>
-          <div class="mt-1">
-            <span class="contact-key">Location:</span>
-            <span>Pune, Maharashtra, India</span>
-          </div>
-          <div class="mt-2">
-            <a routerLink="/contact" class="text-link">Direct dispatch form &rarr;</a>
-          </div>
-        </div>
+    <div class="education-entry">
+      <div class="education-main">
+        <h3 class="education-degree">Bachelor of Engineering (B.E.) in Information Technology</h3>
+        <p class="education-college">Bharati Vidyapeeth's College of Engineering for Women, Pune</p>
+        <p class="education-university">Savitribai Phule Pune University (SPPU)</p>
+        <p class="education-graduation font-mono">Expected graduation: 2026</p>
       </div>
+    </div>
 
+    <!-- Understated LeetCode Entry -->
+    <div class="leetcode-entry">
+      <span class="leetcode-label font-mono">Problem solving:</span>
+      <span class="leetcode-text">
+        170+ problems solved on 
+        <a href="https://leetcode.com/u/nikitajaiswal13/" target="_blank" rel="noopener noreferrer" class="text-link">LeetCode &nearr;</a>
+      </span>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ========================================================================
+       CONTACT & CONNECT
+       ======================================================================== -->
+  <section class="contact-section">
+    <div class="section-title-row">
+      <h2 class="section-heading">Contact</h2>
+    </div>
+
+    <p class="contact-note">
+      Feel free to reach out for internship opportunities, technical discussions, or questions.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-detail">
+        <span class="contact-label font-mono">Email</span>
+        <a href="mailto:nikkijaiswal535@gmail.com" class="text-link">nikkijaiswal535&#64;gmail.com</a>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-label font-mono">Location</span>
+        <span>Pune, Maharashtra, India</span>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-label font-mono">Form</span>
+        <a routerLink="/contact" class="text-link">Direct dispatch form &rarr;</a>
+      </div>
     </div>
   </section>
 
