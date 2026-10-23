@@ -1,191 +1,147 @@
-<section class="section-padding">
-  <div class="container">
-    
-    <!-- Section Header -->
-    <div class="tech-section-header">
-      <div class="tech-kicker">05 // Direct Dispatch Channel</div>
-      <h1 class="tech-title">Initiate Communication</h1>
-      <p class="tech-subtitle">
-        Have an engineering opportunity, technical question, or collaborative project? 
-        Send a direct message through this verified client dispatch pipeline.
-      </p>
+<main class="site-container editorial-page">
+
+  <!-- Header Section -->
+  <header class="contact-hero">
+    <h1 class="contact-heading">Let's connect.</h1>
+    <p class="contact-intro">
+      I'm always open to connecting with people, discussing projects, and exploring opportunities to learn and build.
+    </p>
+
+    <!-- Understated Direct Contact Links -->
+    <div class="contact-links">
+      <a href="mailto:nikkijaiswal535@gmail.com" class="contact-link-item">
+        <span class="contact-link-label font-mono">Email</span>
+        <span class="contact-link-text">nikkijaiswal535&#64;gmail.com</span>
+      </a>
+      <span class="contact-link-dot" aria-hidden="true">&middot;</span>
+      <a href="https://github.com/NikitaJaiswal13" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+        <span>GitHub</span> <span class="arrow">&nearr;</span>
+      </a>
+      <span class="contact-link-dot" aria-hidden="true">&middot;</span>
+      <a href="https://www.linkedin.com/in/nikita-jaiswal-56b10728b/" target="_blank" rel="noopener noreferrer" class="contact-link-item">
+        <span>LinkedIn</span> <span class="arrow">&nearr;</span>
+      </a>
+    </div>
+  </header>
+
+  <hr class="contact-divider" />
+
+  <!-- Form Section -->
+  <section class="contact-form-section">
+    <!-- Success Feedback Alert -->
+    <div *ngIf="submitSuccess" class="form-feedback feedback-success" role="alert">
+      <span class="feedback-icon" aria-hidden="true">&#x2713;</span>
+      <div>
+        <p class="feedback-title">Message sent successfully.</p>
+        <p class="feedback-desc">Thank you for reaching out! I'll get back to you as soon as possible.</p>
+      </div>
     </div>
 
-    <div class="row g-5">
-      
-      <!-- Left Column: Communication Directives -->
-      <div class="col-lg-5">
-        <div class="eng-panel p-4 h-100 d-flex flex-column justify-content-between">
-          <div>
-            <div class="font-mono text-cyan mb-2" style="font-size: 0.8rem;">// DISPATCH DIRECTIVES</div>
-            <h4 class="fw-bold text-light mb-3">Open for Discussion</h4>
-            <p class="text-secondary" style="font-size: 0.9rem;">
-              I am actively seeking Software Engineering Internships and Full-Time Graduate Roles in Full-Stack Development and Applied Machine Learning.
-            </p>
+    <!-- Error Feedback Alert -->
+    <div *ngIf="submitError" class="form-feedback feedback-error" role="alert">
+      <span class="feedback-icon" aria-hidden="true">!</span>
+      <div>
+        <p class="feedback-title">Message could not be delivered.</p>
+        <p class="feedback-desc">
+          Something went wrong while sending your message. Please try again or reach out directly at 
+          <a href="mailto:nikkijaiswal535@gmail.com" class="feedback-link">nikkijaiswal535&#64;gmail.com</a>.
+        </p>
+      </div>
+    </div>
 
-            <div class="contact-methods font-mono mt-4" style="font-size: 0.85rem;">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="contact-icon-box">
-                  <i class="fas fa-envelope text-cyan"></i>
-                </div>
-                <div>
-                  <div class="text-dim" style="font-size: 0.75rem;">DIRECT INBOX</div>
-                  <a href="mailto:nikkijaiswal535@gmail.com" class="text-light">nikkijaiswal535&#64;gmail.com</a>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="contact-icon-box">
-                  <i class="fas fa-phone text-emerald"></i>
-                </div>
-                <div>
-                  <div class="text-dim" style="font-size: 0.75rem;">TELEPHONE</div>
-                  <span class="text-light">+91-7218707784</span>
-                </div>
-              </div>
-
-              <div class="d-flex align-items-center gap-3">
-                <div class="contact-icon-box">
-                  <i class="fas fa-map-marker-alt text-amber"></i>
-                </div>
-                <div>
-                  <div class="text-dim" style="font-size: 0.75rem;">GEOGRAPHIC LOCATION</div>
-                  <span class="text-light">Pune, Maharashtra, India</span>
-                </div>
-              </div>
-            </div>
+    <!-- Contact Form -->
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form" novalidate>
+      <div class="form-grid-2">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="contact-name" class="form-label">
+            Name <span class="required-mark" aria-hidden="true">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="contact-name" 
+            class="form-input" 
+            placeholder="Your name"
+            formControlName="name"
+            [class.input-invalid]="isFieldInvalid('name')"
+            aria-required="true"
+            [attr.aria-invalid]="isFieldInvalid('name')" />
+          <div *ngIf="isFieldInvalid('name')" class="field-error">
+            Please enter your name.
           </div>
+        </div>
 
-          <!-- Quick Connect Buttons -->
-          <div class="d-flex gap-2 mt-4 pt-3 border-top border-subtle">
-            <a href="https://github.com/NikitaJaiswal13" target="_blank" rel="noopener noreferrer" class="btn-eng-secondary btn-eng-sm flex-grow-1">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/nikita-jaiswal-56b10728b/" target="_blank" rel="noopener noreferrer" class="btn-eng-secondary btn-eng-sm flex-grow-1">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="contact-email" class="form-label">
+            Email <span class="required-mark" aria-hidden="true">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="contact-email" 
+            class="form-input" 
+            placeholder="you&#64;example.com"
+            formControlName="email"
+            [class.input-invalid]="isFieldInvalid('email')"
+            aria-required="true"
+            [attr.aria-invalid]="isFieldInvalid('email')" />
+          <div *ngIf="isFieldInvalid('email')" class="field-error">
+            Please enter a valid email address.
           </div>
-
         </div>
       </div>
 
-      <!-- Right Column: Interactive Contact Form -->
-      <div class="col-lg-7">
-        <div class="eng-panel p-4 p-md-5">
-          
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <h5 class="fw-bold mb-0 text-light font-mono">
-              <i class="fas fa-paper-plane text-cyan me-2"></i> Client-Side Dispatch Channel
-            </h5>
-            <span class="status-indicator">
-              <span class="status-dot"></span> Pipeline Active
-            </span>
-          </div>
-
-          <!-- Success Alert -->
-          <div *ngIf="submitSuccess" class="alert alert-success bg-opacity-25 border-emerald font-mono mb-4">
-            <i class="fas fa-check-circle text-emerald me-2"></i>
-            Message dispatched successfully! Thank you for reaching out, Nikita will respond promptly.
-          </div>
-
-          <!-- Error Alert -->
-          <div *ngIf="submitError" class="alert alert-danger bg-opacity-25 border-danger font-mono mb-4">
-            <i class="fas fa-exclamation-triangle text-rose me-2"></i>
-            Transmission failed. Please reach out directly to 
-            <a href="mailto:nikkijaiswal535@gmail.com" class="text-cyan">nikkijaiswal535&#64;gmail.com</a>.
-          </div>
-
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            
-            <div class="row g-3 mb-3">
-              <!-- Name Input -->
-              <div class="col-md-6">
-                <label for="contactName" class="form-label font-mono text-dim" style="font-size: 0.775rem;">
-                  SENDER_NAME *
-                </label>
-                <input 
-                  type="text" 
-                  id="contactName" 
-                  class="form-control eng-input" 
-                  placeholder="e.g. Alex Morgan"
-                  formControlName="name"
-                  [class.is-invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
-                />
-                <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="invalid-feedback font-mono" style="font-size: 0.75rem;">
-                  Please provide your name.
-                </div>
-              </div>
-
-              <!-- Email Input -->
-              <div class="col-md-6">
-                <label for="contactEmail" class="form-label font-mono text-dim" style="font-size: 0.775rem;">
-                  SENDER_EMAIL *
-                </label>
-                <input 
-                  type="email" 
-                  id="contactEmail" 
-                  class="form-control eng-input" 
-                  placeholder="e.g. alex@company.com"
-                  formControlName="email"
-                  [class.is-invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
-                />
-                <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="invalid-feedback font-mono" style="font-size: 0.75rem;">
-                  A valid email address is required.
-                </div>
-              </div>
-            </div>
-
-            <!-- Subject Input -->
-            <div class="mb-3">
-              <label for="contactSubject" class="form-label font-mono text-dim" style="font-size: 0.775rem;">
-                COMMUNICATION_TOPIC
-              </label>
-              <input 
-                type="text" 
-                id="contactSubject" 
-                class="form-control eng-input" 
-                placeholder="Software Engineering Opportunity / Project Discussion"
-                formControlName="subject"
-              />
-            </div>
-
-            <!-- Message Input -->
-            <div class="mb-4">
-              <label for="contactMessage" class="form-label font-mono text-dim" style="font-size: 0.775rem;">
-                MESSAGE_PAYLOAD *
-              </label>
-              <textarea 
-                id="contactMessage" 
-                class="form-control eng-input" 
-                rows="5"
-                placeholder="Provide details regarding role, architecture inquiry, or collaboration parameters..."
-                formControlName="message"
-                [class.is-invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-              ></textarea>
-              <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="invalid-feedback font-mono" style="font-size: 0.75rem;">
-                Please input a message of at least 10 characters.
-              </div>
-            </div>
-
-            <!-- Submit Button -->
-            <button 
-              type="submit" 
-              class="btn-eng-primary w-100" 
-              [disabled]="isSubmitting || contactForm.invalid">
-              <span *ngIf="!isSubmitting">
-                <i class="fas fa-paper-plane me-1"></i> Transmit Message &rarr;
-              </span>
-              <span *ngIf="isSubmitting">
-                <i class="fas fa-spinner fa-spin me-1"></i> Transmitting...
-              </span>
-            </button>
-
-          </form>
-
+      <!-- Subject Field -->
+      <div class="form-group">
+        <label for="contact-subject" class="form-label">
+          Subject <span class="required-mark" aria-hidden="true">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="contact-subject" 
+          class="form-input" 
+          placeholder="What would you like to discuss?"
+          formControlName="subject"
+          [class.input-invalid]="isFieldInvalid('subject')"
+          aria-required="true"
+          [attr.aria-invalid]="isFieldInvalid('subject')" />
+        <div *ngIf="isFieldInvalid('subject')" class="field-error">
+          Please enter a subject.
         </div>
       </div>
 
-    </div>
+      <!-- Message Field -->
+      <div class="form-group">
+        <label for="contact-message" class="form-label">
+          Message <span class="required-mark" aria-hidden="true">*</span>
+        </label>
+        <textarea 
+          id="contact-message" 
+          class="form-textarea" 
+          rows="5"
+          placeholder="Your message..."
+          formControlName="message"
+          [class.input-invalid]="isFieldInvalid('message')"
+          aria-required="true"
+          [attr.aria-invalid]="isFieldInvalid('message')"></textarea>
+        <div *ngIf="isFieldInvalid('message')" class="field-error">
+          Please enter a message (at least 10 characters).
+        </div>
+      </div>
 
-  </div>
-</section>
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button 
+          type="submit" 
+          class="btn-submit" 
+          [disabled]="isSubmitting">
+          <span *ngIf="!isSubmitting">Send Message</span>
+          <span *ngIf="isSubmitting" class="submitting-state">
+            <span class="spinner" aria-hidden="true"></span> Sending...
+          </span>
+        </button>
+      </div>
+    </form>
+  </section>
+
+</main>

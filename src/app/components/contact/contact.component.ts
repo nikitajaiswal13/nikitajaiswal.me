@@ -18,14 +18,23 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      subject: ['Engineering Inquiry'],
+      subject: ['', [Validators.required, Validators.minLength(2)]],
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  isFieldInvalid(fieldName: string): boolean {
+    const field = this.contactForm.get(fieldName);
+    return !!(field && field.invalid && (field.dirty || field.touched));
+  }
+
+  onSubmit(): void {
+    if (this.isSubmitting) {
+      return;
+    }
+
     if (this.contactForm.invalid) {
       this.contactForm.markAllAsTouched();
       return;
@@ -35,11 +44,12 @@ export class ContactComponent implements OnInit {
     this.submitSuccess = false;
     this.submitError = false;
 
+    const formValues = this.contactForm.value;
     const templateParams = {
-      name: this.contactForm.value.name,
-      email: this.contactForm.value.email,
-      message: `[Subject: ${this.contactForm.value.subject || 'Inquiry'}]\n\n${this.contactForm.value.message}`,
-      title: 'New Message from Contact Page',
+      name: formValues.name,
+      email: formValues.email,
+      message: `[Subject: ${formValues.subject}]\n\n${formValues.message}`,
+      title: formValues.subject || 'New Message from Portfolio Contact Page',
       time: new Date().toLocaleString()
     };
 
@@ -47,14 +57,9 @@ export class ContactComponent implements OnInit {
       .then(() => {
         this.isSubmitting = false;
         this.submitSuccess = true;
-        this.contactForm.reset({
-          name: '',
-          email: '',
-          subject: 'Engineering Inquiry',
-          message: ''
-        });
+        this.contactForm.reset();
       })
-      .catch((error) => {
+      .catch((error: unknown) => {
         console.error('Error sending email:', error);
         this.isSubmitting = false;
         this.submitError = true;

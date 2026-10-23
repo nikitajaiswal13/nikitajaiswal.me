@@ -1,19 +1,118 @@
 <main class="site-container editorial-page">
 
-  <section class="about-section">
-    <!-- Small uppercase label -->
-    <div class="about-label">ABOUT</div>
+  <!-- About Hero Section: Intro & Portrait Photo -->
+  <section class="about-hero-grid">
+    <div class="about-intro-col">
+      <h1 class="about-heading">Building, learning, improving.</h1>
+      
+      <p class="about-paragraph">
+        I'm an Information Technology engineering student who enjoys building web applications and learning by working on real projects. I like exploring new technologies, solving coding problems, and turning what I learn into something practical.
+      </p>
 
-    <!-- Main heading -->
-    <h1 class="about-heading">A little about me.</h1>
+      <div class="about-actions">
+        <a routerLink="/contact" class="btn-primary">Contact Me</a>
+        <a 
+          href="assets/Nikita_Jaiswal_Resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-secondary"
+          aria-label="View Nikita Jaiswal's Resume (PDF)">
+          <span>Resume</span> <span class="arrow">&nearr;</span>
+        </a>
+      </div>
+    </div>
 
-    <!-- Paragraph -->
-    <p class="about-paragraph">
-      I'm an Information Technology engineering student who enjoys building web applications and learning by working on real projects. I like exploring new technologies, solving coding problems, and turning what I learn into something practical.
-    </p>
+    <div class="about-photo-wrapper">
+      <img 
+        src="assets/Logo/Nikita.jpg" 
+        alt="Nikita Jaiswal" 
+        class="about-photo"
+        loading="eager" />
+    </div>
+  </section>
 
-    <!-- Subtle horizontal divider near the bottom -->
-    <hr class="about-divider" />
+  <!-- Divider -->
+  <hr class="about-divider" />
+
+  <!-- Achievements Section -->
+  <section class="achievements-section">
+    <h2 class="achievements-heading">A few things I've achieved</h2>
+    
+    <ul class="achievements-list">
+      <li class="achievement-item">
+        <span class="achievement-bullet font-mono" aria-hidden="true">&bull;</span>
+        <div class="achievement-content">
+          <span class="achievement-text">
+            <strong>3rd Rank</strong> &mdash; College-Level Hackathon &mdash; GoDaddy
+          </span>
+        </div>
+      </li>
+      <li class="achievement-item">
+        <span class="achievement-bullet font-mono" aria-hidden="true">&bull;</span>
+        <div class="achievement-content">
+          <span class="achievement-text">
+            <strong>170+</strong> problems solved
+          </span>
+          <a 
+            href="https://leetcode.com/u/nikitajaiswal13/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="achievement-link"
+            aria-label="View Nikita Jaiswal's LeetCode Profile in a new tab">
+            <span>View LeetCode Profile</span> <span class="arrow">&nearr;</span>
+          </a>
+        </div>
+      </li>
+      <li class="achievement-item">
+        <span class="achievement-bullet font-mono" aria-hidden="true">&bull;</span>
+        <div class="achievement-content">
+          <span class="achievement-text">
+            <strong>LeetCode daily challenge badges</strong> &mdash; 50-day and 100-day badges across 2025 and 2026.
+          </span>
+          <div class="badge-links-group">
+            <span class="badge-links-label">View Badges:</span>
+            <div class="badge-links-items">
+              <a 
+                href="https://leetcode.com/medal/?showImg=0&id=10441951&isLevel=false" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="achievement-link"
+                aria-label="View LeetCode Badge 1 in a new tab">
+                <span>Badge 1</span> <span class="arrow">&nearr;</span>
+              </a>
+              <span class="badge-separator font-mono" aria-hidden="true">&middot;</span>
+              <a 
+                href="https://leetcode.com/medal/?showImg=0&id=8866261&isLevel=false" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="achievement-link"
+                aria-label="View LeetCode Badge 2 in a new tab">
+                <span>Badge 2</span> <span class="arrow">&nearr;</span>
+              </a>
+              <span class="badge-separator font-mono" aria-hidden="true">&middot;</span>
+              <a 
+                href="https://leetcode.com/medal/?showImg=0&id=7736319&isLevel=false" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="achievement-link"
+                aria-label="View LeetCode Badge 3 in a new tab">
+                <span>Badge 3</span> <span class="arrow">&nearr;</span>
+              </a>
+              <span class="badge-separator font-mono" aria-hidden="true">&middot;</span>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                (click)="$event.preventDefault()"
+                class="achievement-link is-pending"
+                aria-label="View LeetCode Badge 4 (link pending configuration)">
+                <span>Badge 4</span> <span class="arrow">&nearr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </section>
 
 </main>
