@@ -45,11 +45,23 @@ export class SkillsComponent {
       ]
     },
     {
+      category: 'AI & Machine Learning',
+      skills: [
+        { name: 'Python', icon: 'assets/skills/python.svg' },
+        { name: 'NumPy', icon: 'assets/skills/numpy.svg' },
+        { name: 'Pandas', icon: 'assets/skills/pandas.svg', isPandas: true },
+        { name: 'Matplotlib', icon: 'assets/skills/matplotlib.svg' },
+        { name: 'Seaborn', icon: 'assets/skills/seaborn.svg' },
+        { name: 'NLP Fundamentals', icon: 'assets/skills/nlp.svg', adaptive: true },
+      ]
+    },
+    {
       category: 'Tools',
       skills: [
         { name: 'Git', icon: 'assets/skills/git.svg' },
         { name: 'GitHub', icon: 'assets/skills/github.svg', adaptive: true },
         { name: 'Postman', icon: 'assets/skills/postman.svg' },
+        { name: 'Jupyter Notebook', icon: 'assets/skills/jupyter.svg' },
         { name: 'Antigravity', icon: 'assets/skills/antigravity.svg' },
         { name: 'Cursor', icon: 'assets/skills/cursor.svg', adaptive: true },
       ]
