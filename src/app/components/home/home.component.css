@@ -279,6 +279,13 @@
   padding-top: 2px;
 }
 
+.index-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .index-link {
   display: inline-flex;
   align-items: center;

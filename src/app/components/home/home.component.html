@@ -88,11 +88,12 @@
   <hr class="divider" />
 
   <!-- ========================================================================
-       SELECTED WORK: NUMBERED PROJECT INDEX
+       PROJECTS: NUMBERED PROJECT INDEX
        ======================================================================== -->
-  <section id="work" class="work-section">
+  <section id="projects" class="work-section">
+    <span id="work" style="display: block; position: relative; top: -70px; visibility: hidden;"></span>
     <div class="section-title-row">
-      <h2 class="section-heading">Selected work</h2>
+      <h2 class="section-heading">Projects</h2>
       <a routerLink="/projects" class="section-side-link">
         All projects <span class="arrow">&rarr;</span>
       </a>
@@ -106,7 +107,7 @@
         <div class="index-content">
           <div class="index-header">
             <h3 class="index-title">
-              <a routerLink="/projects">Interactive Learning System</a>
+              <a href="https://ils-interactive-learning-system.netlify.app/" target="_blank" rel="noopener noreferrer">Interactive Learning System</a>
             </h3>
             <span class="index-subtle-tag">Angular &bull; Node.js &bull; MongoDB</span>
           </div>
@@ -115,9 +116,11 @@
           </p>
         </div>
         <div class="index-action">
-          <a routerLink="/projects" class="index-link" aria-label="View Interactive Learning System details">
-            <span>Explore</span> <span class="arrow">&rarr;</span>
-          </a>
+          <div class="index-links">
+            <a href="https://ils-interactive-learning-system.netlify.app/" target="_blank" rel="noopener noreferrer" class="index-link" aria-label="Open Interactive Learning System live application">
+              <span>Live demo</span> <span class="arrow">&nearr;</span>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -136,9 +139,11 @@
           </p>
         </div>
         <div class="index-action">
-          <a routerLink="/projects" class="index-link" aria-label="View EMCAD Fraud Detection details">
-            <span>Explore</span> <span class="arrow">&rarr;</span>
-          </a>
+          <div class="index-links">
+            <a routerLink="/projects" class="index-link" aria-label="View EMCAD Fraud Detection details">
+              <span>Details</span> <span class="arrow">&rarr;</span>
+            </a>
+          </div>
         </div>
       </article>
 
@@ -157,9 +162,14 @@
           </p>
         </div>
         <div class="index-action">
-          <a href="https://medivaultapp.netlify.app/home" target="_blank" rel="noopener noreferrer" class="index-link" aria-label="Open MediVault live application">
-            <span>Live demo</span> <span class="arrow">&nearr;</span>
-          </a>
+          <div class="index-links">
+            <a href="https://medivaultapp.netlify.app/home" target="_blank" rel="noopener noreferrer" class="index-link" aria-label="Open MediVault live application">
+              <span>Live demo</span> <span class="arrow">&nearr;</span>
+            </a>
+            <a href="https://github.com/nikitajaiswal13/MediVault" target="_blank" rel="noopener noreferrer" class="index-link" aria-label="Open MediVault GitHub repository">
+              <span>GitHub</span> <span class="arrow">&nearr;</span>
+            </a>
+          </div>
         </div>
       </article>
 

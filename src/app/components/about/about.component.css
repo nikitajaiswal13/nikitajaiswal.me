@@ -1,5 +1,286 @@
-/* About Component Styles */
-.profile-thumb-wrapper {
-  position: relative;
+/* ==========================================================================
+   ABOUT PAGE — MINIMAL EDITORIAL STYLES
+   ========================================================================== */
+
+.editorial-page {
+  padding-top: 52px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 576px) {
+  .editorial-page {
+    padding-top: 36px;
+    padding-bottom: 60px;
+  }
+}
+
+/* Hero Grid: Intro and Photo */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-intro-col {
+  max-width: 600px;
+}
+
+.about-heading {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--text-heading);
+  margin: 0 0 20px 0;
+}
+
+@media (max-width: 576px) {
+  .about-heading {
+    font-size: 1.85rem;
+    margin-bottom: 16px;
+  }
+}
+
+.about-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 28px 0;
+}
+
+@media (max-width: 576px) {
+  .about-paragraph {
+    font-size: 0.975rem;
+    line-height: 1.68;
+    margin-bottom: 24px;
+  }
+}
+
+/* Action Buttons */
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  background-color: var(--text-heading);
+  color: var(--bg-base);
+  border: 1px solid var(--text-heading);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.88;
+  color: var(--bg-base);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: var(--text-heading);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface);
+  border-color: var(--text-heading);
+  color: var(--text-heading);
+}
+
+.arrow {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* Portrait Photo */
+.about-photo-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+}
+
+.about-photo {
+  width: 148px;
+  height: 180px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 6px;
+  border: 1px solid var(--border-hairline);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 640px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .about-photo-wrapper {
+    justify-content: flex-start;
+  }
+
+  .about-photo {
+    width: 120px;
+    height: 148px;
+  }
+}
+
+/* Divider */
+.about-divider {
+  border: none;
+  border-top: 1px solid var(--border-hairline);
+  margin: 48px 0;
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .about-divider {
+    margin: 36px 0;
+  }
+}
+
+/* Achievements Section */
+.achievements-section {
+  max-width: 680px;
+}
+
+.achievements-heading {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-heading);
+  margin: 0 0 20px 0;
+}
+
+@media (max-width: 576px) {
+  .achievements-heading {
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+  }
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.achievement-bullet {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  user-select: none;
+}
+
+.achievement-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.achievement-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+.achievement-text strong {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.achievement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border-subtle);
+  text-underline-offset: 3px;
+  width: fit-content;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.achievement-link:hover {
+  color: var(--text-heading);
+  text-decoration-color: var(--text-heading);
+}
+
+.achievement-link.is-pending {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.achievement-link.is-pending:hover {
+  opacity: 1;
+}
+
+.achievement-link .arrow {
+  font-size: 0.85rem;
+  text-decoration: none;
   display: inline-block;
+  transition: transform 0.15s ease;
+}
+
+.achievement-link:hover .arrow {
+  transform: translate(1px, -1px);
+}
+
+/* Badge Links Group */
+.badge-links-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.badge-links-label {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.badge-links-items {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge-separator {
+  color: var(--text-faint);
+  font-size: 0.75rem;
+  user-select: none;
 }
