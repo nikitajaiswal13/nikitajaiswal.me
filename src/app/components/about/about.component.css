@@ -1,5 +1,67 @@
-/* About Component Styles */
-.profile-thumb-wrapper {
-  position: relative;
-  display: inline-block;
+/* ==========================================================================
+   ABOUT PAGE — MINIMAL EDITORIAL STYLES
+   ========================================================================== */
+
+.editorial-page {
+  padding-top: 52px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 576px) {
+  .editorial-page {
+    padding-top: 36px;
+    padding-bottom: 60px;
+  }
+}
+
+.about-section {
+  max-width: 680px;
+}
+
+.about-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.about-heading {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--text-heading);
+  margin: 0 0 24px 0;
+}
+
+@media (max-width: 576px) {
+  .about-heading {
+    font-size: 1.85rem;
+    margin-bottom: 18px;
+  }
+}
+
+.about-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-body);
+  margin: 0 0 56px 0;
+  max-width: 640px;
+}
+
+@media (max-width: 576px) {
+  .about-paragraph {
+    font-size: 0.975rem;
+    line-height: 1.68;
+    margin-bottom: 40px;
+  }
+}
+
+.about-divider {
+  border: none;
+  border-top: 1px solid var(--border-hairline);
+  margin: 0;
+  width: 100%;
 }
