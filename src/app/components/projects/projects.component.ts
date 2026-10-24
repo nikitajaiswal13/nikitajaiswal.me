@@ -36,7 +36,8 @@ export class ProjectsComponent {
       num: '03',
       title: 'EMCAD Fraud Detection',
       tech: 'Python • scikit-learn • TF-IDF • pandas',
-      summary: 'Machine-learning classification experiment evaluating text-based features and supervised classification models under class imbalance.'
+      summary: 'Machine-learning classification experiment evaluating text-based features and supervised classification models under class imbalance.',
+      githubUrl: 'https://github.com/nikitajaiswal13/EMCAD-Fraud-Detection'
     },
     {
       num: '04',
