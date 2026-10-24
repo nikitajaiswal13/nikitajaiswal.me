@@ -66,3 +66,33 @@
   border-color: var(--text-muted);
   background-color: var(--bg-surface);
 }
+
+@media (max-width: 576px) {
+  .editorial-header {
+    padding: 24px 0 16px 0;
+  }
+
+  .nav-cluster {
+    gap: 14px;
+  }
+
+  .nav-link-item {
+    font-size: 0.8rem;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-cluster {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
